@@ -1,0 +1,3 @@
+class Kynort::Flights
+
+end
