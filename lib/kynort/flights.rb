@@ -1,3 +1,4 @@
-class Kynort::Flights
-
+module Kynort::Flights
 end
+
+require "lib/kynort/flights/sriwijaya"
