@@ -43,21 +43,21 @@ module Kynort::Flights
     end
 
     def is_adult=(val)
-      self.is_child = false
-      self.is_infant = false
+      @is_child = false
+      @is_infant = false
       @is_adult = val
     end
 
     def is_child=(val)
       @is_child = val
-      self.is_infant = false
-      self.is_adult = false
+      @is_infant = false
+      @is_adult = false
     end
 
     def is_infant=(val)
-      self.is_child = false
+      @is_child = false
       @is_infant = val
-      self.is_adult = false
+      @is_adult = false
     end
   end
 
