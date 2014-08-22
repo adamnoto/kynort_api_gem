@@ -80,7 +80,3 @@ module Kynort::NormalizeCountry
     country.names.map { |name| Countries[name.downcase.to_sym] = country }
   end
 end
-
-def NormalizeCountry(name, options = {})
-  Kynort::NormalizeCountry.convert(name, options)
-end

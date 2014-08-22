@@ -43,7 +43,7 @@ module Kynort::Flights
     end
 
     def nationality=(value)
-     raise "the nationality of #{first_name} cannot be processed, maybe wrong name?" if NormalizeCountry(value).nil?
+     raise "the nationality of #{first_name} cannot be processed, maybe wrong name?" if Kynort::NormalizeCountry.convert(value).nil?
     end
 
     def is_adult=(val)
