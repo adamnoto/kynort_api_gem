@@ -178,8 +178,7 @@ module Kynort::Flights
 
       # process passengers
       @passengers.each do |psg|
-        x = ""
-        if pgs.is_adult?
+        if psg.is_adult?
           x = "a"
         elsif psg.is_child?
           x = "c"
