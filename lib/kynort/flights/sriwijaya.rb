@@ -1,2 +1,2 @@
-module Kynort::Flights::Sriwijaya
+class Kynort::Flights::Sriwijaya
 end
