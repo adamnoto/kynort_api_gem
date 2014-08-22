@@ -18,6 +18,11 @@ module Kynort::Flights
     attr_accessor :is_child
     attr_accessor :is_infant
 
+    alias_method :is_contact_person?, :is_contact_person
+    alias_method :is_adult?, :is_adult
+    alias_method :is_child?, :is_child
+    alias_method :is_infant?, :is_infant
+
     attr_accessor :associated_adult
 
     def validate!
