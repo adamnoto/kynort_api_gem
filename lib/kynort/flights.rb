@@ -120,6 +120,9 @@ module Kynort::Flights
     end
 
     def to_hash
+      # validate first
+      validate!
+
       data = {
         user: user,
         password: password,
@@ -210,7 +213,7 @@ module Kynort::Flights
         data["#{x}_nats"] << (psg.nationality.nil? ? "" : psg.nationality) + "....."
 
         if x == "i"
-          data["#{x}_assocs"] = adult_passengers.index(psg.associated_adult)
+          data["#{x}_assocs"] = adult_passengers.index(psg.associated_adult) + 1
         end
 
         if psg.is_contact_person

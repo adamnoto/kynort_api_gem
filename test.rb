@@ -58,9 +58,10 @@ ch1.is_child = true
 if1 = Kynort::Flights::Passenger.new
 if1.title = Kynort::TITLE_MISTER
 if1.passport = "T912032"
-if1.first_name "Titan"
+if1.first_name = "Titan"
 if1.last_name = "Fairullah"
 if1.born_day = 4
+if1.born_month = 6
 if1.born_day = 2
 if1.born_year = 2013
 if1.nationality = "ID"
