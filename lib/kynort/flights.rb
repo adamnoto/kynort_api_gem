@@ -194,13 +194,13 @@ module Kynort::Flights
         end
 
         data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
-        data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport) + "....."
+        data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
         data["#{x}_fns"] << (psg.first_name.nil? ? "" : psg.first_name) + "....."
         data["#{x}_mns"] << (psg.middle_name.nil? ? "" : psg.middle_name) + "....."
         data["#{x}_lns"] << (psg.last_name.nil? ? "" : psg.last_name) + "....."
-        data["#{x}_dborns"] << (psg.born_day.nil? ? "" : psg.born_day) + "....."
-        data["#{x}_mborns"] << (psg.born_month.nil? ? "" : psg.born_month) + "....."
-        data["#{x}_yborns"] << (psg.born_year.nil? ? "" : psg.born_year) + "....."
+        data["#{x}_dborns"] << (psg.born_day.nil? ? "" : psg.born_day.to_s) + "....."
+        data["#{x}_mborns"] << (psg.born_month.nil? ? "" : psg.born_month.to_s) + "....."
+        data["#{x}_yborns"] << (psg.born_year.nil? ? "" : psg.born_year.to_s) + "....."
         data["#{x}_nats"] << (psg.nationality.nil? ? "" : psg.nationality) + "....."
 
         if x == "i"
