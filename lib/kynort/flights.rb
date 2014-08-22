@@ -44,7 +44,8 @@ module Kynort::Flights
     end
 
     def nationality=(value)
-     raise "the nationality of #{first_name} cannot be processed, maybe wrong name?" if Kynort::NormalizeCountry.convert(value).nil?
+      raise "the nationality of #{first_name} cannot be processed, maybe wrong name?" if Kynort::NormalizeCountry.convert(value).nil?
+      @nationality = value
     end
 
     def is_adult=(val)
@@ -182,12 +183,16 @@ module Kynort::Flights
       }.with_indifferent_access
 
       # process passengers
+      entered_adult = entered_child = entered_infant = 0
       @passengers.each do |psg|
         if psg.is_adult?
+          entered_adult += 1
           x = "a"
         elsif psg.is_child?
+          entered_child += 1
           x = "c"
         elsif psg.is_infant?
+          entered_infant += 1
           x = "i"
         else
           raise "unsure"
@@ -214,6 +219,11 @@ module Kynort::Flights
       end
 
       data = data.delete_if { |k, v| v.nil? || v.blank? }
+
+      # check number
+      raise "number of adults do not match with number of inputted data for adult" unless data[:adult] == entered_adult
+      raise "number of children do not match with number of inputted data for children" unless data[:child] == entered_child
+      raise "number of infant do not match with number of inputted data for infant" unless data[:infant] == entered_infant
 
       data
     end
