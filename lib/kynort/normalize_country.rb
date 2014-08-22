@@ -73,7 +73,7 @@ module Kynort::NormalizeCountry
     end
   end
 
-  path = File.join(File.dirname(__FILE__), "normalize_country", "countries", "en.yml")
+  path = File.join(File.dirname(__FILE__), "countries", "en.yml")
   data = YAML.load_file(path)
   data.values.each do |mapping|
     country = Country.new(mapping)
