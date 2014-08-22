@@ -183,6 +183,7 @@ module Kynort::Flights
       }.with_indifferent_access
 
       # process passengers
+      adult_passengers = @passengers.clone.reject! { |psg| !psg.is_adult? }
       entered_adult = entered_child = entered_infant = 0
       @passengers.each do |psg|
         if psg.is_adult?
@@ -209,7 +210,7 @@ module Kynort::Flights
         data["#{x}_nats"] << (psg.nationality.nil? ? "" : psg.nationality) + "....."
 
         if x == "i"
-          data["#{x}_assocs"] = @passengers.index(psg.associated_adult)
+          data["#{x}_assocs"] = adult_passengers.index(psg.associated_adult)
         end
 
         if psg.is_contact_person
