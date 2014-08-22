@@ -2,10 +2,6 @@ require "normalize_country"
 
 module Kynort::Flights
   class Kynort::Flights::Passenger
-    TITLE_MISTER = "Mr"
-    TITLE_MS = "Ms"
-    TITLE_MRS = "Mrs"
-
     attr_accessor :title
     attr_accessor :phone
     attr_accessor :passport
@@ -65,7 +61,8 @@ module Kynort::Flights
     end
   end
 
-  class Kynort::Flights::SearchQuery
+  # can be used both for searching flight or booking flight
+  class Kynort::Flights::Query
     attr_accessor :user
     attr_accessor :password
 
@@ -89,8 +86,8 @@ module Kynort::Flights
     attr_accessor :agent_comp_email
 
     # only adult passenger can be given right to be a contact person (0-indexed)
-    attr_accessor :contact_who
-    attr_accessor :contact_hp
+    # attr_accessor :contact_who
+    # attr_accessor :contact_hp
     attr_accessor :contact_email
 
     attr_accessor :use_insurance
@@ -138,8 +135,8 @@ module Kynort::Flights
         agent_comp_phone: agent_comp_phone,
         agent_comp_email: agent_comp_email,
 
-        contact_who: contact_who,
-        contact_hp: contact_hp,
+        # contact_who: contact_who,  # automatically filled by contact person passenger
+        # contact_hp: contact_hp,    # automatically filled by contact person passenger
         contact_email: contact_email,
 
         a_titles: "",
@@ -175,7 +172,7 @@ module Kynort::Flights
         i_assocs: "",
         i_nats: "",
 
-        insurace: use_insurance,
+        insurace: use_insurance ? 1 : 0,
         issue_it_now: false
       }.with_indifferent_access
 
@@ -205,9 +202,15 @@ module Kynort::Flights
         if x == "i"
           data["#{x}_assocs"] = @passengers.index(psg.associated_adult)
         end
+
+        if psg.is_contact_person
+          data["contact_who"] = psg.first_name + (" #{psg.middle_name}" if psg.middle_name) + (" #{psg.last_name}" if psg.last_name)
+          data["contact_hp"] = psg.phone
+        end
       end
 
       data = data.delete_if { |k, v| v.nil? || v.blank? }
+
       data
     end
 
@@ -244,6 +247,41 @@ module Kynort::Flights
       @passengers.each { |psgr| psgr.validate! }
     end
   end
+
+  sq = Kynort::Flights::Query.new
+  sq.user = "dintvr"
+  sq.password = "din456123Ct!3"
+  sq.flight_key = "AD2EfBcxZdsamerUu23Ksmmxns=="
+  sq.depart = "CGK"
+  sq.arrival = "SUB"
+  sq.from = "25-10-2014"
+  sq.adult = 2
+  sq.child = 1
+  sq.infant = 1
+  sq.agent_first_name = "Ohida"
+  sq.agent_last_name = "Yoropopo"
+  sq.agent_comp_name = "Secret Tour and Travel"
+  sq.agent_comp_addr = "238 ABCD"
+  sq.agent_comp_phone = "08391212"
+  sq.agent_comp_email = "secretour@gmail.com"
+  sq.contact_email = "adam.pahlevi@gmail.com"
+  sq.use_insurance = false
+
+  adl1 = Kynort::Flights::Passenger.new
+  adl1.title = Kynort::TITLE_MISTER
+  adl1.phone = "085607071341"
+  adl1.passport = "A0307865"
+  adl1.first_name = "Adam"
+  adl1.middle_name = "Pahlevi"
+  adl1.last_name = "Baihaqi"
+  adl1.born_day = 2
+  adl1.born_month = 12
+  adl1.born_year = 1992
+  adl1.nationality = "ID"
+  adl1.is_contact_person = true
+  adl1.is_adult = true
+
+  sq.add_passenger adl1
 end
 
 require "kynort/flights/sriwijaya"
