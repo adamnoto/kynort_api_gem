@@ -48,8 +48,8 @@
           <file leaf-file-name="normalize_country.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/kynort/normalize_country.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.48598132" vertical-offset="984" max-vertical-offset="1305">
-                  <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+                <state vertical-scroll-proportion="0.046728972" vertical-offset="0" max-vertical-offset="1335">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -577,8 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/kynort/normalize_country.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48598132" vertical-offset="984" max-vertical-offset="1305">
-          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.046728972" vertical-offset="0" max-vertical-offset="1335">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
