@@ -1,6 +1,7 @@
 require "configuration"
 require "kynort/version"
 require "active_support/all"
+require "rest_client"
 
 module Kynort
   TITLE_MISTER = "Mr"
