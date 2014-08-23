@@ -74,7 +74,7 @@ module Kynort::NormalizeCountry
   end
 
   path = File.join(File.dirname(__FILE__), "countries", "en.yml")
-  data = YAML.load_file(path)
+  data = ::YAML.load_file(path)
   data.values.each do |mapping|
     country = Country.new(mapping)
     country.names.map { |name| Countries[name.downcase.to_sym] = country }
