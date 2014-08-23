@@ -130,7 +130,7 @@ module Kynort::Flights
     def to_hash
       # validate first
       validate!
-      raise "flight key cannot be nil/blank" if is_searching? && (flight_key.nil? || flight_key.blank?)
+      raise "flight key cannot be nil/blank" if !is_searching? && (flight_key.nil? || flight_key.blank?)
 
       data = {
         access_token: access_token,
