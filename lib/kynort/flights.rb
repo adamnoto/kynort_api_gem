@@ -27,7 +27,7 @@ module Kynort::Flights
 
     def validate!
       raise "title must be either Mr/Ms/Mrs" unless [Kynort::TITLE_MISTER, Kynort::TITLE_MS, Kynort::TITLE_MRS].include?(title)
-      raise "phone cannot be nil/blank" if phone.nil? || phone.blank?
+      raise "phone cannot be nil/blank" if is_adult && (phone.nil? || phone.blank?)
       raise "first name cannot be nil/blank" if first_name.nil? || first_name.blank?
       raise "born month must be an integer" if born_month.nil? || born_month.blank? || !born_month.is_a?(Integer)
       raise "born day must be an integer" if born_day.nil? || born_day.blank? || !born_day.is_a?(Integer)
