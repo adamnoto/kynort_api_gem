@@ -1,3 +1,4 @@
+require "configuration"
 require "kynort/version"
 require "active_support/all"
 

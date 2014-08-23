@@ -1,6 +1,9 @@
 require "kynort"
 
 sq = Kynort::Flights::Query.new
+sq.access_token = "9a493662e0259be95917cac23290cd28a4fa0872fc2ac00d915f079db2ad9599"
+sq.business_token = "ABCDE"
+
 sq.user = "dintvr"
 sq.password = "din456123Ct!3"
 sq.flight_key = "AD2EfBcxZdsamerUu23Ksmmxns=="

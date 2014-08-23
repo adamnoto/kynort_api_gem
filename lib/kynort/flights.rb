@@ -69,6 +69,9 @@ module Kynort::Flights
 
   # can be used both for searching flight or booking flight
   class Kynort::Flights::Query
+    attr_accessor :access_token
+    attr_accessor :business_token
+
     attr_accessor :user
     attr_accessor :password
 
@@ -113,6 +116,10 @@ module Kynort::Flights
       validate_passengers
     end
 
+    def is_searching?
+      self.flight_key.nil?
+    end
+
     def add_passenger(passenger)
       raise "passenger must be an instance of Kynort::Flights::Passenger" unless passenger.is_a?(Kynort::Flights::Passenger)
       @passengers ||= []
@@ -124,6 +131,9 @@ module Kynort::Flights
       validate!
 
       data = {
+        access_token: access_token,
+        business_token: business_token,
+
         user: user,
         password: password,
         flight_key: flight_key,
@@ -185,55 +195,56 @@ module Kynort::Flights
         issue_it_now: false
       }.with_indifferent_access
 
-      # process passengers
-      adult_passengers = @passengers.clone.reject! { |psg| !psg.is_adult? }
-      entered_adult = entered_child = entered_infant = 0
-      @passengers.each do |psg|
-        if psg.is_adult?
-          entered_adult += 1
-          x = "a"
-        elsif psg.is_child?
-          entered_child += 1
-          x = "c"
-        elsif psg.is_infant?
-          entered_infant += 1
-          x = "i"
-        else
-          raise "unsure"
-        end
+      unless is_searching?
+        # process passengers
+        adult_passengers = @passengers.clone.reject! { |psg| !psg.is_adult? }
+        entered_adult = entered_child = entered_infant = 0
+        @passengers.each do |psg|
+          if psg.is_adult?
+            entered_adult += 1
+            x = "a"
+          elsif psg.is_child?
+            entered_child += 1
+            x = "c"
+          elsif psg.is_infant?
+            entered_infant += 1
+            x = "i"
+          else
+            raise "unsure"
+          end
 
-        data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
-        data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
-        data["#{x}_fns"] << (psg.first_name.nil? ? "" : psg.first_name) + "....."
-        data["#{x}_mns"] << (psg.middle_name.nil? ? "" : psg.middle_name) + "....."
-        data["#{x}_lns"] << (psg.last_name.nil? ? "" : psg.last_name) + "....."
-        data["#{x}_dborns"] << (psg.born_day.nil? ? "" : psg.born_day.to_s) + "....."
-        data["#{x}_mborns"] << (psg.born_month.nil? ? "" : psg.born_month.to_s) + "....."
-        data["#{x}_yborns"] << (psg.born_year.nil? ? "" : psg.born_year.to_s) + "....."
-        data["#{x}_nats"] << (psg.nationality.nil? ? "" : psg.nationality) + "....."
+          data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
+          data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
+          data["#{x}_fns"] << (psg.first_name.nil? ? "" : psg.first_name) + "....."
+          data["#{x}_mns"] << (psg.middle_name.nil? ? "" : psg.middle_name) + "....."
+          data["#{x}_lns"] << (psg.last_name.nil? ? "" : psg.last_name) + "....."
+          data["#{x}_dborns"] << (psg.born_day.nil? ? "" : psg.born_day.to_s) + "....."
+          data["#{x}_mborns"] << (psg.born_month.nil? ? "" : psg.born_month.to_s) + "....."
+          data["#{x}_yborns"] << (psg.born_year.nil? ? "" : psg.born_year.to_s) + "....."
+          data["#{x}_nats"] << (psg.nationality.nil? ? "" : psg.nationality) + "....."
 
-        if x == "i"
-          data["#{x}_assocs"] = adult_passengers.index(psg.associated_adult) + 1
-        end
+          if x == "i"
+            data["#{x}_assocs"] = adult_passengers.index(psg.associated_adult) + 1
+          end
 
-        if psg.is_contact_person
-          data["contact_who"] = psg.first_name + (" #{psg.middle_name}" if psg.middle_name) + (" #{psg.last_name}" if psg.last_name)
-          data["contact_hp"] = psg.phone
+          if psg.is_contact_person
+            data["contact_who"] = psg.first_name + (" #{psg.middle_name}" if psg.middle_name) + (" #{psg.last_name}" if psg.last_name)
+            data["contact_hp"] = psg.phone
+          end
         end
+        # check number
+        raise "number of adults do not match with number of inputted data for adult" unless data[:adult] == entered_adult
+        raise "number of children do not match with number of inputted data for children" unless data[:child] == entered_child
+        raise "number of infant do not match with number of inputted data for infant" unless data[:infant] == entered_infant
       end
 
       data = data.delete_if { |k, v| v.nil? || v.blank? }
-
-      # check number
-      raise "number of adults do not match with number of inputted data for adult" unless data[:adult] == entered_adult
-      raise "number of children do not match with number of inputted data for children" unless data[:child] == entered_child
-      raise "number of infant do not match with number of inputted data for infant" unless data[:infant] == entered_infant
-
-      data
     end
 
     private
     def validate_basic_credential
+      raise "access token cannot be blank/nil" if access_token.nil? || access_token.blank?
+      raise "business token cannot be blank/nil" if business_token.nil? || business_token.blank?
       raise "user (carrier agent account) cannot be blank/nil" if user.nil? || user.blank?
       raise "password (carrier agent account password) cannot be nil/blank" if password.nil? || password.blank?
       raise "flight key cannot be nil/blank" if flight_key.nil? || flight_key.blank?
