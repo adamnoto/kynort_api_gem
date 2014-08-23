@@ -33,7 +33,7 @@ module Kynort::Flights
       raise "born day must be an integer" if born_day.nil? || born_day.blank? || !born_day.is_a?(Integer)
       raise "born year must be an integer" if born_year.nil? || born_year.blank? || !born_year.is_a?(Integer)
       raise "born day must be between 1 to 31" unless (1..31).include?(born_day)
-      raise "born month must be between 1 to 12" unless (1..12).include?(born_year)
+      raise "born month must be between 1 to 12" unless (1..12).include?(born_month)
       raise "must be either an adult, a child, or an infant" if !is_adult || !is_child || !is_infant || \
         (is_adult && (is_child || is_infant)) || (is_child && (is_adult || is_infant)) || (is_infant && (is_adult || is_child))
       raise "is_adult must be a boolean" if !is_adult.is_a?(TrueClass) || !is_adult.is_a?(FalseClass)
