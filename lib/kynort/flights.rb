@@ -102,6 +102,8 @@ module Kynort::Flights
 
     attr_accessor :use_insurance
 
+    attr_reader :passengers
+
     def initialize
       super
       self.child = 0
@@ -279,4 +281,8 @@ module Kynort::Flights
   end
 end
 
+require "kynort/flights/air_asia"
+require "kynort/flights/citilink"
+require "kynort/flights/garuda_indonesia"
+require "kynort/flights/lion"
 require "kynort/flights/sriwijaya"
