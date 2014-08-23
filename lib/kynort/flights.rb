@@ -1,5 +1,3 @@
-require "normalize_country"
-
 module Kynort::Flights
   class Kynort::Flights::Passenger
     attr_accessor :title
