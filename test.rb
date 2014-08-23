@@ -76,4 +76,4 @@ sq.add_passenger adl2
 sq.add_passenger ch1
 sq.add_passenger if1
 
-puts sq.to_hash
+Kynort::Flights::Sriwijaya.search sq
