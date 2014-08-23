@@ -199,6 +199,7 @@ module Kynort::Flights
         # process passengers
         adult_passengers = @passengers.clone.reject! { |psg| !psg.is_adult? }
         entered_adult = entered_child = entered_infant = 0
+        any_passenger_as_contact_person = false
         @passengers.each do |psg|
           if psg.is_adult?
             entered_adult += 1
@@ -212,6 +213,8 @@ module Kynort::Flights
           else
             raise "unsure"
           end
+
+          any_passenger_as_contact_person = true if !any_passenger_as_contact_person && psg.is_contact_person?
 
           data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
           data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
@@ -266,9 +269,6 @@ module Kynort::Flights
     end
 
     def validate_contact
-      raise "contact's who must be a 0-based index of your ADULT passenger that will be contacted shall required." if \
-        contact_who.nil? || contact_who.blank? || !contact_who.is_a?(Integer)
-      raise "contact's handphone cannot be nil/blank" if contact_hp.nil? || contact_hp.blank?
       raise "contact's email cannot be nil/blank" if contact_email.nil? || contact_email.blank?
     end
 
