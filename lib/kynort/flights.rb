@@ -37,9 +37,9 @@ module Kynort::Flights
       raise "must be either an adult (#{is_adult}), a child (#{is_child}), or an infant (#{is_infant})"  if \
         (is_adult && (is_child || is_infant)) || (is_child && (is_adult || is_infant)) || \
         (is_infant && (is_adult || is_child))
-      raise "is_adult must be a boolean" if !is_adult.is_a?(TrueClass) || !is_adult.is_a?(FalseClass)
-      raise "is_child must be a boolean" if !is_child.is_a?(TrueClass) || !is_child.is_a?(FalseClass)
-      raise "is_infant must be a boolean" if !is_infant.is_a?(TrueClass) || !is_infant.is_a?(FalseClass)
+      raise "is_adult must be a boolean" if is_adult && (!is_adult.is_a?(TrueClass) || !is_adult.is_a?(FalseClass))
+      raise "is_child must be a boolean" if is_child && (!is_child.is_a?(TrueClass) || !is_child.is_a?(FalseClass))
+      raise "is_infant must be a boolean" if is_infant && (!is_infant.is_a?(TrueClass) || !is_infant.is_a?(FalseClass))
       raise "associated_adult must be an adult" if is_infant && (associated_adult.nil? || \
        !associated_adult.is_a?(Kynort::Flights::Passenger) || !associated_adult.is_adult)
     end
