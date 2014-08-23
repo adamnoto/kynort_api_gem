@@ -130,6 +130,7 @@ module Kynort::Flights
     def to_hash
       # validate first
       validate!
+      raise "flight key cannot be nil/blank" if is_searching? && (flight_key.nil? || flight_key.blank?)
 
       data = {
         access_token: access_token,
@@ -251,7 +252,6 @@ module Kynort::Flights
       raise "business token cannot be blank/nil" if business_token.nil? || business_token.blank?
       raise "user (carrier agent account) cannot be blank/nil" if user.nil? || user.blank?
       raise "password (carrier agent account password) cannot be nil/blank" if password.nil? || password.blank?
-      raise "flight key cannot be nil/blank" if flight_key.nil? || flight_key.blank?
     end
 
     def validate_journey

@@ -6,7 +6,7 @@ sq.business_token = "493f9724-4b4a-4cca-949d-d65ee0a3e787"
 
 sq.user = "dintvr"
 sq.password = "din456123Ct!3"
-sq.flight_key = "AD2EfBcxZdsamerUu23Ksmmxns=="
+# sq.flight_key = "AD2EfBcxZdsamerUu23Ksmmxns=="
 sq.depart = "CGK"
 sq.arrival = "SUB"
 sq.from = "25-10-2014"
