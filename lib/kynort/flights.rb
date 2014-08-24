@@ -279,6 +279,42 @@ module Kynort::Flights
       @passengers.each { |psgr| psgr.validate! }
     end
   end
+
+  class << self
+    def search(airline_code, query)
+      case airline_code.to_s.downcase
+        when "aia"
+          return Kynort::Flights::AirAsia.search query
+        when "gia"
+          return Kynort::Flights::GarudaIndonesia.search query
+        when "lir"
+          return Kynort::Flights::Lion.search query
+        when "sya"
+          return Kynort::Flights::Sriwijaya.search query
+        when "cnk"
+          return Kynort::Flights::Citilink.search query
+        else
+          raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
+      end
+    end
+
+    def pick(airline_code, query)
+      case airline_code.to_s.downcase
+        when "aia"
+          return Kynort::Flights::AirAsia.pick query
+        when "gia"
+          return Kynort::Flights::GarudaIndonesia.pick query
+        when "lir"
+          return Kynort::Flights::Lion.pick query
+        when "sya"
+          return Kynort::Flights::Sriwijaya.pick query
+        when "cnk"
+          return Kynort::Flights::Citilink.pick query
+        else
+          raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
+      end
+    end
+  end
 end
 
 require "kynort/flights/air_asia"
