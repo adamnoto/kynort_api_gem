@@ -110,16 +110,20 @@ module Kynort::Flights
       @passengers ||= []
     end
 
+    def is_searching?
+      self.flight_key.nil?
+    end
+
     def validate!
       validate_basic_credential
       validate_journey
-      validate_agent
-      validate_contact
-      validate_passengers
-    end
-
-    def is_searching?
-      self.flight_key.nil?
+      # only validate agent and contact and passengers while not on pick request,
+      # search request no need to fill in those values
+      unless is_searching?
+        validate_agent
+        validate_contact
+        validate_passengers
+      end
     end
 
     def add_passenger(passenger)

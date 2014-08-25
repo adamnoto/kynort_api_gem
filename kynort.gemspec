@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Adam Pahlevi"]
   spec.email         = ["adam.pahlevi@gmail.com"]
   spec.summary       = %q{Gem for Kynort API}
-  spec.homepage      = ""
+  spec.description   = %q{Kynort API gem is a gem that could communicate with the Kynort Server.}
+  spec.homepage      = "http://adampahlevi.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "activemodel", "~> 4.1.5"
-  spec.add_development_dependency "activesupport", "~> 4.1.5"
-  spec.add_development_dependency "rest-client", "~> 1.7.2"
+  spec.add_development_dependency "rake", "~> 10.1"
+  spec.add_development_dependency "activemodel", "~> 4.1"
+  spec.add_development_dependency "activesupport", "~> 4.1"
+  spec.add_development_dependency "rest-client", "~> 1.7"
 end
