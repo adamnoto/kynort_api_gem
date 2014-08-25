@@ -71,7 +71,6 @@ module Kynort::Flights
   # can be used both for searching flight or booking flight
   class Kynort::Flights::Query
     attr_accessor :access_token
-    attr_accessor :business_token
 
     attr_accessor :user
     attr_accessor :password
@@ -136,7 +135,6 @@ module Kynort::Flights
 
       data = {
         access_token: access_token,
-        business_token: business_token,
 
         user: user,
         password: password,
@@ -251,7 +249,6 @@ module Kynort::Flights
     private
     def validate_basic_credential
       raise "access token cannot be blank/nil" if access_token.nil? || access_token.blank?
-      raise "business token cannot be blank/nil" if business_token.nil? || business_token.blank?
       raise "user (carrier agent account) cannot be blank/nil" if user.nil? || user.blank?
       raise "password (carrier agent account password) cannot be nil/blank" if password.nil? || password.blank?
     end
