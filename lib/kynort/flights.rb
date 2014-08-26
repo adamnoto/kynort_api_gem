@@ -271,7 +271,7 @@ module Kynort::Flights
 
       data = data.delete_if { |k, v| v.nil? || v.blank? }
     rescue => e
-      raise e.backtrace
+      raise e.backtrace.join("\n").to_s
     end
 
     private
