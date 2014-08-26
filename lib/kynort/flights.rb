@@ -235,7 +235,7 @@ module Kynort::Flights
         adult_passengers = @passengers.clone.reject! { |psg| !psg.is_adult? }
         entered_adult = entered_child = entered_infant = 0
         any_passenger_as_contact_person = false
-        @passengers.each do |psg|
+        @passengers.each.with_index(1) do |psg, idx|
           if psg.is_adult?
             entered_adult += 1
             x = "a"
@@ -267,7 +267,7 @@ module Kynort::Flights
           end
 
           if psg.is_contact_person
-            data["contact_who"] = psg.first_name + (psg.middle_name.nil? ? "" : " #{psg.middle_name}") + (psg.last_name.nil? ? "" : " #{psg.last_name}")
+            data["contact_who"] = Integer idx
             data["contact_hp"] = psg.phone
           end
         end
