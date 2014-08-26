@@ -91,6 +91,8 @@ module Kynort::Flights
     attr_accessor :is_error
     attr_accessor :error_message
     attr_accessor :raw
+
+    alias_method :is_error?, :is_error
   end
 
   # can be used both for searching flight or booking flight
@@ -224,7 +226,7 @@ module Kynort::Flights
         i_assocs: "",
         i_nats: "",
 
-        insurace: use_insurance ? 1 : 0,
+        insurance: use_insurance ? 1 : 0,
         issue_it_now: false
       }.with_indifferent_access
 
@@ -250,6 +252,7 @@ module Kynort::Flights
           any_passenger_as_contact_person = true if !any_passenger_as_contact_person && psg.is_contact_person?
 
           data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
+          data["#{x}_phones"] << (psg.phone.nil? ? "" : psg.phone) + "....."
           data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
           data["#{x}_fns"] << (psg.first_name.nil? ? "" : psg.first_name) + "....."
           data["#{x}_mns"] << (psg.middle_name.nil? ? "" : psg.middle_name) + "....."
