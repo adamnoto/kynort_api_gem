@@ -259,7 +259,7 @@ module Kynort::Flights
           end
 
           if psg.is_contact_person
-            data["contact_who"] = psg.first_name + (" #{psg.middle_name}" if psg.middle_name) + (" #{psg.last_name}" if psg.last_name)
+            data["contact_who"] = psg.first_name + (psg.middle_name.nil? ? "" : " #{psg.middle_name}") + (psg.last_name.nil? ? "" : " #{psg.last_name}")
             data["contact_hp"] = psg.phone
           end
         end
