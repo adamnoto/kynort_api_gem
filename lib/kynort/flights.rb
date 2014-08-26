@@ -26,15 +26,15 @@ module Kynort::Flights
     attr_accessor :associated_adult
 
     def born_month=(val)
-      self.born_month = Integer born_month rescue val
+      @born_month = Integer val rescue val
     end
 
     def born_year=(val)
-      self.born_year = Integer born_year rescue val
+      @born_year = Integer val rescue val
     end
 
     def born_day=(val)
-      self.born_day = Integer born_day rescue val
+      @born_day = Integer val rescue val
     end
 
     def validate!
