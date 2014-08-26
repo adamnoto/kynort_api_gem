@@ -27,13 +27,6 @@ module Kynort::Flights
 
     def validate!
       # attempt to convert month/day/year, so if it was string, it will become integer right away.
-      begin
-        self.born_day = Integer born_day
-        self.born_month = Integer born_month
-        self.born_year = Integer born_year
-      rescue => e
-        # do nothing
-      end
 
       raise "title must be either Mr/Ms/Mrs" unless [Kynort::TITLE_MISTER, Kynort::TITLE_MS, Kynort::TITLE_MRS].include?(title)
       raise "phone cannot be nil/blank" if is_adult && (phone.nil? || phone.blank?)
@@ -142,6 +135,14 @@ module Kynort::Flights
     end
 
     def to_hash
+      begin
+        self.born_day = Integer born_day
+        self.born_month = Integer born_month
+        self.born_year = Integer born_year
+      rescue => e
+        # do nothing
+      end
+
       # validate first
       validate!
       raise "flight key cannot be nil/blank" if !is_searching? && (flight_key.nil? || flight_key.blank?)
