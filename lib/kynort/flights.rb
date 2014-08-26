@@ -87,6 +87,11 @@ module Kynort::Flights
       @is_adult = false
     end
   end
+  class Kynort::Flights::Response
+    attr_accessor :is_error
+    attr_accessor :error_message
+    attr_accessor :raw
+  end
 
   # can be used both for searching flight or booking flight
   class Kynort::Flights::Query
@@ -307,36 +312,50 @@ module Kynort::Flights
 
   class << self
     def search(airline_code, query)
+      response = Kynort::Flights::Response.new
       case airline_code.to_s.downcase
         when "aia"
-          return Kynort::Flights::AirAsia.search query
+          response.raw = Kynort::Flights::AirAsia.search query
         when "gia"
-          return Kynort::Flights::GarudaIndonesia.search query
+          response.raw = Kynort::Flights::GarudaIndonesia.search query
         when "lir"
-          return Kynort::Flights::Lion.search query
+          response.raw = Kynort::Flights::Lion.search query
         when "sya"
-          return Kynort::Flights::Sriwijaya.search query
+          response.raw = Kynort::Flights::Sriwijaya.search query
         when "cnk"
-          return Kynort::Flights::Citilink.search query
+          response.raw = Kynort::Flights::Citilink.search query
         else
           raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
+      end
+    rescue => e
+      response.is_error = true
+      response.error_message = e.message
+      if e.is_a?(RestClient::BadRequest)
+        response.raw = e.response
       end
     end
 
     def pick(airline_code, query)
+      response = Kynort::Flights::Response.new
       case airline_code.to_s.downcase
         when "aia"
-          return Kynort::Flights::AirAsia.pick query
+          response.raw = Kynort::Flights::AirAsia.pick query
         when "gia"
-          return Kynort::Flights::GarudaIndonesia.pick query
+          response.raw = Kynort::Flights::GarudaIndonesia.pick query
         when "lir"
-          return Kynort::Flights::Lion.pick query
+          response.raw = Kynort::Flights::Lion.pick query
         when "sya"
-          return Kynort::Flights::Sriwijaya.pick query
+          response.raw = Kynort::Flights::Sriwijaya.pick query
         when "cnk"
-          return Kynort::Flights::Citilink.pick query
+          response.raw = Kynort::Flights::Citilink.pick query
         else
           raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
+      end
+    rescue => e
+      response.is_error = true
+      response.error_message = e.message
+      if e.is_a?(RestClient::BadRequest)
+        response.raw = e.response
       end
     end
   end
