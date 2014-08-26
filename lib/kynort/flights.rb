@@ -333,6 +333,8 @@ module Kynort::Flights
       if e.is_a?(RestClient::BadRequest)
         response.raw = e.response
       end
+    ensure
+      response
     end
 
     def pick(airline_code, query)
@@ -357,6 +359,8 @@ module Kynort::Flights
       if e.is_a?(RestClient::BadRequest)
         response.raw = e.response
       end
+    ensure
+      response
     end
   end
 end
