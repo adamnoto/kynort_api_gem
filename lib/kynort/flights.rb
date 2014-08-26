@@ -327,14 +327,14 @@ module Kynort::Flights
         else
           raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
       end
+      return response
     rescue => e
       response.is_error = true
       response.error_message = e.message
       if e.is_a?(RestClient::BadRequest)
         response.raw = e.response
       end
-    ensure
-      response
+      return response
     end
 
     def pick(airline_code, query)
@@ -353,14 +353,14 @@ module Kynort::Flights
         else
           raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
       end
+      return response
     rescue => e
       response.is_error = true
       response.error_message = e.message
       if e.is_a?(RestClient::BadRequest)
         response.raw = e.response
       end
-    ensure
-      response
+      return response
     end
   end
 end

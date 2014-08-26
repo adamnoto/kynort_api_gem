@@ -36,8 +36,8 @@
       <file leaf-file-name="flights.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/kynort/flights.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8692422" vertical-offset="360" max-vertical-offset="1185">
-              <caret line="362" column="14" selection-start-line="362" selection-start-column="14" selection-end-line="362" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.9138187" vertical-offset="330" max-vertical-offset="1185">
+              <caret line="362" column="21" selection-start-line="362" selection-start-column="21" selection-end-line="362" selection-end-column="21" />
               <folding>
                 <element signature="e#61#3238#0" expanded="false" />
                 <element signature="e#3426#10627#0" expanded="false" />
@@ -568,8 +568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/kynort/flights.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8692422" vertical-offset="360" max-vertical-offset="1185">
-          <caret line="362" column="14" selection-start-line="362" selection-start-column="14" selection-end-line="362" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.9138187" vertical-offset="330" max-vertical-offset="1185">
+          <caret line="362" column="21" selection-start-line="362" selection-start-column="21" selection-end-line="362" selection-end-column="21" />
           <folding>
             <element signature="e#61#3238#0" expanded="false" />
             <element signature="e#3426#10627#0" expanded="false" />
