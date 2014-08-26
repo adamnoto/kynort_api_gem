@@ -144,6 +144,8 @@ module Kynort::Flights
         validate_contact
         validate_passengers
       end
+
+      nil
     end
 
     def add_passenger(passenger)
@@ -268,6 +270,8 @@ module Kynort::Flights
       end
 
       data = data.delete_if { |k, v| v.nil? || v.blank? }
+    rescue => e
+      raise e.backtrace
     end
 
     private
