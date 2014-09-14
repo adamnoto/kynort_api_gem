@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'kynort_gem/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "kynort_gem"
+  spec.name          = "kynort"
   spec.version       = Kynort::VERSION
   spec.authors       = ["Adam Pahlevi"]
   spec.email         = ["adam.pahlevi@gmail.com"]
-  spec.summary       = %q{Gem for Kynort API}
-  spec.description   = %q{Kynort API gem is a gem that could communicate with the Kynort Server.}
+  spec.summary       = %q{Gem for Kynort Server}
+  spec.description   = %q{Kynort API gem is a ruby gem to communicate with the Kynort Server. Kynort Server is a Flight-search-as-a-Service, where you can use its API to search and book South-East Asian flights.}
   spec.homepage      = "http://adampahlevi.com"
   spec.license       = "MIT"
 
