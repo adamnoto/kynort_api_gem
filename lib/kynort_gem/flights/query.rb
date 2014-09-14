@@ -1,8 +1,6 @@
 
 # can be used both for searching flight or booking flight
 class Kynort::Flights::Query
-  attr_accessor :access_token
-
   attr_accessor :user
   attr_accessor :password
 
@@ -71,7 +69,7 @@ class Kynort::Flights::Query
     raise "flight key cannot be nil/blank" if !is_searching? && (flight_key.nil? || flight_key.blank?)
 
     data = {
-        access_token: access_token,
+        access_token: Kynort.token,
 
         user: user,
         password: password,

@@ -2,6 +2,7 @@ require "configuration"
 require "kynort_gem/version"
 require "active_support/configurable"
 require "rest_client"
+require "json"
 
 module Kynort
   include ActiveSupport::Configurable
@@ -12,10 +13,27 @@ module Kynort
 
   class << self
     def setup
-      config.api_key = nil
+      config.app_key = nil
       config.secret_key = nil
       config.host = "http://localhost:4001"
     end
+  end
+
+  module_function
+
+  def token
+    if @token.nil? || (Time.now.to_i + 200) > @token_expired_time
+      response = RestClient.post "#{config.host}/oauth/token", {
+        grant_type: "client_credentials",
+        client_id: config.app_key,
+        client_secret: config.secret_key
+      }
+      response = JSON.parse(response)
+
+      @token = response["access_token"]
+      @token_expired_time = Time.now.to_i + Integer(response["expires_in"])
+    end
+    @token
   end
 end
 
