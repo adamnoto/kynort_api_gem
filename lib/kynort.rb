@@ -16,6 +16,7 @@ module Kynort
       config.app_key = nil
       config.secret_key = nil
       config.host = "http://localhost:4001"
+      yield config
     end
   end
 
