@@ -8,7 +8,7 @@ module Kynort
       namespace "kynort"
 
       def make_initializer
-        template "initialize_kynort.rb", "config/initializer/kynort.rb"
+        template "initialize_kynort.rb", "config/initializers/kynort.rb"
       end
     end
   end
