@@ -55,17 +55,6 @@ module Kynort::Flights
     return response
   end
 
-  def suggest_routes(options = {})
-    access_token = options.fetch(:access_token)
-    origin = options[:origin]
-
-    params = {access_token: access_token}
-    params[:origin] = origin if origin
-
-    response = RestClient.get "http://localhost:4001/api/v1/flights/routes", params: params
-    response = JSON.parse(response).with_indifferent_access
-    response[:airports]
-  end
 end
 
 require "kynort_gem/flights/air_asia"
@@ -77,3 +66,4 @@ require "kynort_gem/flights/sriwijaya"
 require "kynort_gem/flights/passenger"
 require "kynort_gem/flights/response"
 require "kynort_gem/flights/query"
+require "kynort_gem/flights/routes"
