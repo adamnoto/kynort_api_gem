@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in kynort.gemspec
+# Specify your gem's dependencies in kynort_gem.gemspec
 gemspec

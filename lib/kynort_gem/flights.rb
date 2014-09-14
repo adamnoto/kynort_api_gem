@@ -1,4 +1,4 @@
-require "kynort/normalize_country"
+require "kynort_gem/normalize_country"
 
 module Kynort::Flights
   module_function
@@ -65,12 +65,12 @@ module Kynort::Flights
   end
 end
 
-require "kynort/flights/air_asia"
-require "kynort/flights/citilink"
-require "kynort/flights/garuda_indonesia"
-require "kynort/flights/lion"
-require "kynort/flights/sriwijaya"
+require "kynort_gem/flights/air_asia"
+require "kynort_gem/flights/citilink"
+require "kynort_gem/flights/garuda_indonesia"
+require "kynort_gem/flights/lion"
+require "kynort_gem/flights/sriwijaya"
 
-require "kynort/flights/passenger"
-require "kynort/flights/response"
-require "kynort/flights/query"
+require "kynort_gem/flights/passenger"
+require "kynort_gem/flights/response"
+require "kynort_gem/flights/query"

@@ -1,4 +1,4 @@
-require "kynort"
+require "kynort_gem"
 
 sq = Kynort::Flights::Query.new
 sq.access_token = "9a493662e0259be95917cac23290cd28a4fa0872fc2ac00d915f079db2ad9599"

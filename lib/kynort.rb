@@ -1,5 +1,5 @@
 require "configuration"
-require "kynort/version"
+require "kynort_gem/version"
 require "active_support/all"
 require "rest_client"
 
@@ -11,5 +11,5 @@ module Kynort
   # Your code goes here...
 end
 
-require "kynort/flights"
-require "kynort/normalize_country"
+require "kynort_gem/flights"
+require "kynort_gem/normalize_country"

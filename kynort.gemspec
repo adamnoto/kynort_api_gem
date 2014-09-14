@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'kynort/version'
+require 'kynort_gem/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "kynort"
+  spec.name          = "kynort_gem"
   spec.version       = Kynort::VERSION
   spec.authors       = ["Adam Pahlevi"]
   spec.email         = ["adam.pahlevi@gmail.com"]
