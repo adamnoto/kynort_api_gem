@@ -23,6 +23,7 @@ module Kynort::Flights
   rescue => e
     response.is_error = true
     response.error_message = e.message
+    response.error_backtrace = e.backtrace.join("\n")
     if e.is_a?(RestClient::BadRequest)
       response.raw = e.response
     end
@@ -49,6 +50,7 @@ module Kynort::Flights
   rescue => e
     response.is_error = true
     response.error_message = e.message
+    response.error_backtrace = e.backtrace.join("\n")
     if e.is_a?(RestClient::BadRequest)
       response.raw = e.response
     end
