@@ -23,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26666668" vertical-offset="0" max-vertical-offset="675">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35951662" vertical-offset="827" max-vertical-offset="3300">
+              <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -61,12 +71,13 @@
         <option value="$PROJECT_DIR$/lib/kynort/flights/query.rb" />
         <option value="$PROJECT_DIR$/lib/kynort/flights.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights/routes.rb" />
+        <option value="$PROJECT_DIR$/lib/kynort_gem/flights/query.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="489" />
-    <option name="y" value="22" />
+    <option name="x" value="244" />
+    <option name="y" value="75" />
     <option name="width" value="1297" />
     <option name="height" value="970" />
   </component>
@@ -105,6 +116,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kynort" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kynort_gem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -112,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="suggest_r&#9;null&#9;null&#10;browse&#9;null&#9;null&#10;lion&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights/lion.rb&#10;passen&#9;null&#9;null&#10;gemspe&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/kynort.gemspec&#10;kynort&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort.rb&#10;normali&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/normalize_country.rb&#10;fligh&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights.rb&#10;&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/version.rb" />
+    <property name="SearchEverywhereHistoryKey" value="flights/query&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/query.rb&#10;suggest_r&#9;null&#9;null&#10;browse&#9;null&#9;null&#10;lion&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights/lion.rb&#10;passen&#9;null&#9;null&#10;gemspe&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/kynort.gemspec&#10;kynort&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort.rb&#10;normali&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/normalize_country.rb&#10;fligh&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights.rb&#10;&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/version.rb" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../indoskyapi" />
   </component>
   <component name="RunManager">
@@ -214,7 +235,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="489" y="22" width="1297" height="970" extended-state="0" />
+    <frame x="244" y="75" width="1297" height="970" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -223,7 +244,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17678382" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23585658" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23904383" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -259,6 +280,14 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="390">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/configuration.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="420">
@@ -362,8 +391,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26666668" vertical-offset="0" max-vertical-offset="675">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35951662" vertical-offset="827" max-vertical-offset="3300">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
           <folding />
         </state>
       </provider>

@@ -186,7 +186,6 @@ class Kynort::Flights::Query
 
   private
   def validate_basic_credential
-    raise "access token cannot be blank/nil" if access_token.nil? || access_token.blank?
     raise "user (carrier agent account) cannot be blank/nil" if user.nil? || user.blank?
     raise "password (carrier agent account password) cannot be nil/blank" if password.nil? || password.blank?
   end
