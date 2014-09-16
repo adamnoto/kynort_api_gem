@@ -1,4 +1,3 @@
-require "configuration"
 require "kynort_gem/version"
 require "active_support/configurable"
 require "rest_client"
