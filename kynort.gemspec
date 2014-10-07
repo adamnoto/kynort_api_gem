@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Kynort::VERSION
   spec.authors       = ["Adam Pahlevi"]
   spec.email         = ["adam.pahlevi@gmail.com"]
-  spec.summary       = %q{Gem for Kynort Server}
-  spec.description   = %q{Kynort API gem is a ruby gem to communicate with the Kynort Server. Kynort Server is a Flight-search-as-a-Service, where you can use its API to search and book South-East Asian flights.}
-  spec.homepage      = "http://adampahlevi.com"
+  spec.summary       = %q{Gem for Kynort, searching and booking flights and hotels}
+  spec.description   = %q{Kynort is a ruby gem to communicate with Kynort (kynort.aquiforth.com)}
+  spec.homepage      = "http://kynorth.aquiforth.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

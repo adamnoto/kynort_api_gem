@@ -35,7 +35,18 @@ module Kynort
     end
     @token
   end
+
+  def new_request
+    reply = RestClient.get "#{config.host}/api/api_request/new.json"
+    ApiRequest.new(reply)
+  end
+
+  def explain_request(guid)
+    reply = RestClient.get "#{config.host}/api/api_request/explain.json", params: {request_guid: guid}
+    ApiRequest.new(reply)
+  end
 end
 
 require "kynort_gem/flights"
 require "kynort_gem/normalize_country"
+require "kynort_gem/api_request"
