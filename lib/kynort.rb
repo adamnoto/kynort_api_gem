@@ -37,12 +37,12 @@ module Kynort
   end
 
   def new_request
-    reply = RestClient.get "#{config.host}/api/api_request/new.json"
+    reply = RestClient.get "#{config.host}/api/api_request/new.json", params: {access_token: token}
     ApiRequest.new(reply)
   end
 
   def explain_request(guid)
-    reply = RestClient.get "#{config.host}/api/api_request/explain.json", params: {request_guid: guid}
+    reply = RestClient.get "#{config.host}/api/api_request/explain.json", params: {access_token: token, request_guid: guid}
     ApiRequest.new(reply)
   end
 end
