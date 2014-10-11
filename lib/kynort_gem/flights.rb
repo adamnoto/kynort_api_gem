@@ -3,19 +3,19 @@ require "kynort_gem/normalize_country"
 module Kynort::Flights
   module_function
 
-  def search(airline_code, query)
+  def search(request_guid, airline_code, query)
     response = Kynort::Flights::Response.new
     case airline_code.to_s.downcase
       when "aia"
-        response.raw = Kynort::Flights::AirAsia.search query
+        response.raw = Kynort::Flights::AirAsia.search request_guid, query
       when "gia"
-        response.raw = Kynort::Flights::GarudaIndonesia.search query
+        response.raw = Kynort::Flights::GarudaIndonesia.search request_guid, query
       when "lir"
-        response.raw = Kynort::Flights::Lion.search query
+        response.raw = Kynort::Flights::Lion.search request_guid, query
       when "sya"
-        response.raw = Kynort::Flights::Sriwijaya.search query
+        response.raw = Kynort::Flights::Sriwijaya.search request_guid, query
       when "cnk"
-        response.raw = Kynort::Flights::Citilink.search query
+        response.raw = Kynort::Flights::Citilink.search request_guid, query
       else
         raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
     end
@@ -41,19 +41,19 @@ module Kynort::Flights
     return response
   end
 
-  def pick(airline_code, query)
+  def pick(request_guid, airline_code, query)
     response = Kynort::Flights::Response.new
     case airline_code.to_s.downcase
       when "aia"
-        response.raw = Kynort::Flights::AirAsia.pick query
+        response.raw = Kynort::Flights::AirAsia.pick request_guid, query
       when "gia"
-        response.raw = Kynort::Flights::GarudaIndonesia.pick query
+        response.raw = Kynort::Flights::GarudaIndonesia.pick request_guid, query
       when "lir"
-        response.raw = Kynort::Flights::Lion.pick query
+        response.raw = Kynort::Flights::Lion.pick request_guid, query
       when "sya"
-        response.raw = Kynort::Flights::Sriwijaya.pick query
+        response.raw = Kynort::Flights::Sriwijaya.pick request_guid, query
       when "cnk"
-        response.raw = Kynort::Flights::Citilink.pick query
+        response.raw = Kynort::Flights::Citilink.pick request_guid, query
       else
         raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
     end
