@@ -30,7 +30,7 @@ module Kynort::Flights
     response.error_message = e.message
     response.error_backtrace = e.backtrace.join("\n")
     if e.is_a?(RestClient::BadRequest)
-      resp_as_hash = JSON.parse response.raw
+      resp_as_hash = JSON.parse e.response
       if resp_as_hash["error"]
         raise resp_as_hash["error"]
       end
