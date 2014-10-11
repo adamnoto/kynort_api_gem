@@ -23,12 +23,19 @@ module Kynort::Flights
     if resp_as_hash["error"]
       raise resp_as_hash["error"]
     end
+
     return response
   rescue => e
     response.is_error = true
     response.error_message = e.message
     response.error_backtrace = e.backtrace.join("\n")
     if e.is_a?(RestClient::BadRequest)
+      resp_as_hash = JSON.parse response.raw
+      if resp_as_hash["error"]
+        raise resp_as_hash["error"]
+      end
+
+      response.error_message += ". #{resp_as_hash["error"]}"
       response.raw = e.response
     end
     return response
