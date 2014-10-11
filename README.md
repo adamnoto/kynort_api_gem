@@ -46,15 +46,16 @@ After gaining secret key and app id, you then need to configure Kynort. Create K
 
 ## Usage
 
-Before you can use any API endpoint, you will need to inform Kynort that you will perform
-an API request. To do so:
+### Searching/Booking flights
+
+Before you can search/book flight, you will need to generate a request GUID. To do so:
 
     Kynort.new_request()
 
-You can check the status of your request:
+Whenever you want, you can check the status of your request whether the search/book
+is performed yet, or whether there is an error in the request or not:
 
     Kynort.explain_request("your request GUID")
-
 
 
 ## Contributing
