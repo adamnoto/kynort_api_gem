@@ -4,6 +4,8 @@ module Kynort::Flights
   module_function
 
   def search(request_guid, airline_code, query)
+    raise "query must be of type Kynorts::Flights::Query" unless query.is_a?(Kynort::Flights::Query)
+
     response = Kynort::Flights::Response.new
     case airline_code.to_s.downcase
       when "aia"

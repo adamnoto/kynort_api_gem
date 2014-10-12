@@ -1,10 +1,8 @@
 
 # can be used both for searching flight or booking flight
 class Kynort::Flights::Query
-  attr_accessor :user
-  attr_accessor :password
-
   attr_accessor :flight_key
+  attr_accessor :use_cache
 
   attr_accessor :depart
   attr_accessor :arrival
@@ -71,9 +69,8 @@ class Kynort::Flights::Query
     data = {
         access_token: Kynort.token,
 
-        user: user,
-        password: password,
         flight_key: flight_key,
+        use_cache: use_cache,
         depart: depart,
         arrival: arrival,
         from: from,
