@@ -49,7 +49,7 @@ class Kynort::Flights::Query
   end
 
   def validate!
-    raise "use_cache cannot be nil/blank, it must be either true or false" unless use_cache.is_a?(TrueClass) || use_cache.is_a?(FalseClass)
+    raise "use_cache cannot be nil/blank, it must be either true or false" unless @use_cache.is_a?(TrueClass) || @use_cache.is_a?(FalseClass)
 
     validate_journey
     # only validate agent and contact and passengers while not on pick request,
