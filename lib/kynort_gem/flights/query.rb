@@ -2,7 +2,14 @@
 # can be used both for searching flight or booking flight
 class Kynort::Flights::Query
   attr_accessor :flight_key
-  attr_accessor :use_cache
+  attr_writer :use_cache
+  def use_cache
+    if use_cache
+      return 1
+    else
+      return 0
+    end
+  end
 
   attr_accessor :depart
   attr_accessor :arrival
@@ -43,6 +50,7 @@ class Kynort::Flights::Query
 
   def validate!
     raise "use_cache cannot be nil/blank, it must be either true or false" unless use_cache.is_a?(TrueClass) || use_cache.is_a?(FalseClass)
+
     validate_journey
     # only validate agent and contact and passengers while not on pick request,
     # search request no need to fill in those values
