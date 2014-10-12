@@ -42,7 +42,7 @@ class Kynort::Flights::Query
   end
 
   def validate!
-    validate_basic_credential
+    raise "use_cache cannot be nil/blank, it must be either true or false" unless use_cache.is_a?(TrueClass) || use_cache.is_a?(FalseClass)
     validate_journey
     # only validate agent and contact and passengers while not on pick request,
     # search request no need to fill in those values
@@ -182,10 +182,6 @@ class Kynort::Flights::Query
   end
 
   private
-  def validate_basic_credential
-    raise "user (carrier agent account) cannot be blank/nil" if user.nil? || user.blank?
-    raise "password (carrier agent account password) cannot be nil/blank" if password.nil? || password.blank?
-  end
 
   def validate_journey
     raise "depart cannot be nil/blank" if depart.nil? || depart.blank?
