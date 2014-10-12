@@ -14,6 +14,7 @@ class Kynort::Flights::Query
   attr_accessor :depart
   attr_accessor :arrival
   attr_accessor :from
+  attr_accessor :to
   attr_accessor :adult
 
   attr_accessor :child, :infant
@@ -136,6 +137,9 @@ class Kynort::Flights::Query
         insurance: use_insurance ? 1 : 0,
         issue_it_now: false
     }.with_indifferent_access
+
+    # only if to is specified, add it
+    data[:to] = to if to && !to.blank?
 
     unless is_searching?
       # process passengers
