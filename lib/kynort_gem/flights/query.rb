@@ -4,7 +4,7 @@ class Kynort::Flights::Query
   attr_accessor :flight_key
   attr_writer :use_cache
   def use_cache
-    if use_cache
+    if @use_cache
       return 1
     else
       return 0
