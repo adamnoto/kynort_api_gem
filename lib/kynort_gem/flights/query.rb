@@ -83,7 +83,6 @@ class Kynort::Flights::Query
         adult: adult,
         child: child,
         infant: infant,
-        captcha: captcha,
 
         agent_fn: agent_first_name,
         agent_mn: agent_middle_name,
@@ -138,6 +137,7 @@ class Kynort::Flights::Query
 
     # only if to is specified, add it
     data[:to] = to if to && !to.blank?
+    data[:captcha] = captcha if captcha && !captcha.blank?
 
     unless is_searching?
       # process passengers
