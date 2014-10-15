@@ -11,13 +11,10 @@ class Kynort::Flights::Query
     end
   end
 
-  attr_accessor :depart
-  attr_accessor :arrival
-  attr_accessor :from
-  attr_accessor :to
-  attr_accessor :adult
-
-  attr_accessor :child, :infant
+  attr_accessor :depart, :arrival
+  attr_accessor :from, :to
+  attr_accessor :adult, :child, :infant
+  attr_accessor :captcha
 
   attr_accessor :agent_first_name
   attr_accessor :agent_middle_name # optional
@@ -86,6 +83,7 @@ class Kynort::Flights::Query
         adult: adult,
         child: child,
         infant: infant,
+        captcha: captcha,
 
         agent_fn: agent_first_name,
         agent_mn: agent_middle_name,
