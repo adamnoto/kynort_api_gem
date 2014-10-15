@@ -19,7 +19,7 @@ module Kynort::Flights
       when "cnk"
         response.raw = Kynort::Flights::Citilink.search request_guid, query
       else
-        raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
+        raise "airline code not understood (#{airline_code}), only {aia, gia, sya, cnk, lir}"
     end
     resp_as_hash = JSON.parse response.raw
     if resp_as_hash["error"]
@@ -57,7 +57,7 @@ module Kynort::Flights
       when "cnk"
         response.raw = Kynort::Flights::Citilink.pick request_guid, query
       else
-        raise "airline code not understood, only {aia, gia, sya, cnk, lir}"
+        raise "airline code not understood (#{airline_code}), only {aia, gia, sya, cnk, lir}"
     end
     return response
   rescue => e
