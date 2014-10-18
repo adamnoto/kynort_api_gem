@@ -36,10 +36,12 @@ class Kynort::Flights::Query
   attr_reader :passengers
 
   def initialize
-    super
     self.child = 0
     self.infant = 0
     @passengers ||= []
+    self.flight_key = []
+
+    super
   end
 
   def is_searching?
@@ -47,6 +49,10 @@ class Kynort::Flights::Query
   end
 
   def validate!
+    # automatically set use_cache to false, if booking
+    if passengers.any? && flight_key.any?
+      self.use_cache = false
+    end
     raise "use_cache cannot be nil/blank, it must be either true or false" unless @use_cache.is_a?(TrueClass) || @use_cache.is_a?(FalseClass)
 
     validate_journey
