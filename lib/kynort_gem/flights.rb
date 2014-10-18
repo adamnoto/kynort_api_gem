@@ -44,8 +44,16 @@ module Kynort::Flights
   end
 
   def pick(request_guid, airline_code, query)
+    acode = airline_code
+    if airline_code.is_a?(Array)
+      acode = airline_code[0]
+      airline_code.each do |acode_from_arr|
+        raise "cannot have diverging airline in one order: #{airline_code}" if acode != acode_from_arr
+      end
+    end
+
     response = Kynort::Flights::Response.new
-    case airline_code.to_s.downcase
+    case acode.to_s.downcase
       when "aia"
         response.raw = Kynort::Flights::AirAsia.pick request_guid, query
       when "gia"
@@ -69,7 +77,6 @@ module Kynort::Flights
     end
     return response
   end
-
 end
 
 require "kynort_gem/flights/air_asia"
