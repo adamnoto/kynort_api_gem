@@ -38,14 +38,14 @@ class Kynort::Flights::Query
   def initialize
     self.child = 0
     self.infant = 0
-    @passengers ||= []
-    self.flight_key = []
+    self.passengers ||= []
+    self.flight_key ||= []
 
     super
   end
 
   def is_searching?
-    self.flight_key.nil?
+    !(self.flight_key.blank? || self.passengers.blank?)
   end
 
   def validate!
@@ -76,7 +76,7 @@ class Kynort::Flights::Query
   def to_hash
     # validate first
     validate!
-    raise "flight key cannot be nil/blank" if !is_searching? && (flight_key.nil? || flight_key.blank?)
+    raise "flight key cannot be nil/blank" if !is_searching?
 
     data = {
         access_token: Kynort.token,
@@ -194,7 +194,7 @@ class Kynort::Flights::Query
 
     data = data.delete_if { |k, v| v.nil? || v.blank? }
   rescue => e
-    raise e.backtrace.join("\n").to_s
+    raise $!, "Error in converting query to hash, error: #{e.message}", $!
   end
 
   private
