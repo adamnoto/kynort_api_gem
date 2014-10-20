@@ -39,7 +39,8 @@ class Kynort::Flights::Query
     self.child = 0
     self.infant = 0
     self.passengers ||= []
-    self.flight_key ||= []
+    @passengers ||= []
+    @flight_key ||= []
 
     super
   end
