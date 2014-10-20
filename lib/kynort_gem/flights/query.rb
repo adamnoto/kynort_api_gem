@@ -45,7 +45,7 @@ class Kynort::Flights::Query
   end
 
   def is_searching?
-    !(self.flight_key.blank? || self.passengers.blank?)
+    (self.flight_key.blank? || self.passengers.blank?)
   end
 
   def validate!
