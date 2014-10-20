@@ -194,7 +194,7 @@ class Kynort::Flights::Query
 
     data = data.delete_if { |k, v| v.nil? || v.blank? }
   rescue => e
-    raise $!, "Error in converting query to hash, error: #{e.message}", $!
+    raise $!, "Error in converting query to hash, error: #{e.message}", $!.backtrace
   end
 
   private
