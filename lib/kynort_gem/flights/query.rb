@@ -76,7 +76,7 @@ class Kynort::Flights::Query
   def to_hash
     # validate first
     validate!
-    raise "flight key cannot be nil/blank" if !is_searching?
+    raise "flight key cannot be nil/blank" if (flight_key.nil? || flight_key.blank?) && !is_searching?
 
     data = {
         access_token: Kynort.token,
