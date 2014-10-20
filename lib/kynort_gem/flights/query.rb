@@ -1,7 +1,13 @@
 
 # can be used both for searching flight or booking flight
 class Kynort::Flights::Query
-  attr_accessor :flight_key
+  attr_writer :flight_key
+  def flight_key
+    # flight key is separated from each other by 5 dots
+    fk_dotted = ""
+    @flight_key.each { |each_fk| fk_dotted << "#{each_fk}....." }
+    fk_dotted
+  end
   attr_writer :use_cache
   def use_cache
     if @use_cache
