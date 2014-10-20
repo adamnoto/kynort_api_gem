@@ -38,7 +38,6 @@ class Kynort::Flights::Query
   def initialize
     self.child = 0
     self.infant = 0
-    self.passengers ||= []
     @passengers ||= []
     @flight_key ||= []
 
