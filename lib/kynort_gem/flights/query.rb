@@ -51,12 +51,12 @@ class Kynort::Flights::Query
   end
 
   def is_searching?
-    (self.flight_key.blank? || self.passengers.blank?)
+    (@flight_key.blank? || self.passengers.blank?)
   end
 
   def validate!
     # automatically set use_cache to false, if booking
-    if passengers.any? && flight_key.any?
+    if passengers.any? && @flight_key.any?
       self.use_cache = false
     end
     raise "use_cache cannot be nil/blank, it must be either true or false" unless @use_cache.is_a?(TrueClass) || @use_cache.is_a?(FalseClass)
@@ -82,7 +82,7 @@ class Kynort::Flights::Query
   def to_hash
     # validate first
     validate!
-    raise "flight key cannot be nil/blank" if (flight_key.nil? || flight_key.blank?) && !is_searching?
+    raise "flight key cannot be nil/blank" if (@flight_key.nil? || @flight_key.blank?) && !is_searching?
 
     data = {
         access_token: Kynort.token,
