@@ -5,12 +5,14 @@ class Kynort::Flights::Query
     @airline.to_s.downcase
   end
   attr_accessor :request_guid
-  attr_writer :flight_key
   def flight_key
     # flight key is separated from each other by 5 dots
     fk_dotted = ""
     @flight_key.each { |each_fk| fk_dotted << "#{each_fk}....." }
     fk_dotted
+  end
+  def add_flight_key(flight_key)
+    @flight_key << flight_key
   end
   attr_writer :use_cache
   def use_cache
