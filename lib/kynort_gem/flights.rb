@@ -3,7 +3,9 @@ require "kynort_gem/normalize_country"
 module Kynort::Flights
   module_function
 
-  def search(request_guid, airline_code, query)
+  def search(query)
+    request_guid = query.request_guid
+    airline_code = query.airline
     raise "query must be of type Kynorts::Flights::Query" unless query.is_a?(Kynort::Flights::Query)
 
     response = Kynort::Flights::Response.new
@@ -43,7 +45,10 @@ module Kynort::Flights
     return response
   end
 
-  def pick(request_guid, airline_code, query)
+  def pick(query)
+    request_guid = query.request_guid
+    airline_code = query.airline
+
     acode = airline_code
     if airline_code.is_a?(Array)
       acode = airline_code[0]

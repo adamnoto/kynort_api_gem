@@ -1,6 +1,10 @@
-
 # can be used both for searching flight or booking flight
 class Kynort::Flights::Query
+  attr_writer :airline
+  def airline
+    @airline.to_s.downcase
+  end
+  attr_accessor :request_guid
   attr_writer :flight_key
   def flight_key
     # flight key is separated from each other by 5 dots
@@ -55,19 +59,23 @@ class Kynort::Flights::Query
   end
 
   def validate!
+    raise "request_guid cannot be nil/blank" if request_guid.blank?
+    raise "airline cannot be nil/blank" if airline.blank?
+    raise "airline must be either: cnk, sya, gia, lir, aia" unless %w(cnk sya gia lir aia).include? airline.to_s
+
     # automatically set use_cache to false, if booking
     if passengers.any? && @flight_key.any?
       self.use_cache = false
     end
     raise "use_cache cannot be nil/blank, it must be either true or false" unless @use_cache.is_a?(TrueClass) || @use_cache.is_a?(FalseClass)
 
-    validate_journey
+    validate_journey!
     # only validate agent and contact and passengers while not on pick request,
     # search request no need to fill in those values
     unless is_searching?
-      validate_agent
-      validate_contact
-      validate_passengers
+      validate_agent!
+      validate_contact!
+      validate_passengers!
     end
 
     nil
@@ -203,16 +211,14 @@ class Kynort::Flights::Query
     raise $!, "Error in converting query to hash, error: #{e.message}", $!.backtrace
   end
 
-  private
-
-  def validate_journey
+  def validate_journey!
     raise "depart cannot be nil/blank" if depart.nil? || depart.blank?
     raise "arrival cannot be nil/blank" if arrival.nil? || arrival.blank?
     raise "from cannot be nil/blank" if from.nil? || from.blank?
     raise "adult cannot be nil/blank" if adult.nil? || adult.blank?
   end
 
-  def validate_agent
+  def validate_agent!
     raise "agent's first name cannot be nil/blank" if agent_first_name.nil? || agent_first_name.blank?
     raise "agent's company name cannot be nil/blank" if agent_comp_name.nil? || agent_comp_name.blank?
     raise "agent's company address cannot be nil/blank" if agent_comp_addr.nil? || agent_comp_addr.blank?
@@ -220,11 +226,11 @@ class Kynort::Flights::Query
     raise "agent's company email cannot be nil/blank" if agent_comp_email.nil? || agent_comp_email.blank?
   end
 
-  def validate_contact
+  def validate_contact!
     raise "contact's email cannot be nil/blank" if contact_email.nil? || contact_email.blank?
   end
 
-  def validate_passengers
+  def validate_passengers!
     @passengers.each { |psgr| psgr.validate! }
   end
 end
