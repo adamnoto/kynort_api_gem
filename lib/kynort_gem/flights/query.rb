@@ -5,15 +5,27 @@ class Kynort::Flights::Query
     @airline.to_s.downcase
   end
   attr_accessor :request_guid
-  def flight_key
-    # flight key is separated from each other by 5 dots
+
+  def add_go_key(go_flight_key)
+    @go_flight_keys << go_flight_key
+  end
+
+  def add_return_key(return_flight_key)
+    @return_flight_keys << return_flight_key
+  end
+
+  def go_flight_keys
     fk_dotted = ""
-    @flight_key.each { |each_fk| fk_dotted << "#{each_fk}....." }
+    @go_flight_keys.each { |fk| fk_dotted << "#{fk}....." }
     fk_dotted
   end
-  def add_flight_key(flight_key)
-    @flight_key << flight_key
+
+  def return_flight_keys
+    fk_dotted = ""
+    @return_flight_keys.each { |fk| fk_dotted << "#{fk}....." }
+    fk_dotted
   end
+
   attr_writer :use_cache
   def use_cache
     if @use_cache
@@ -58,7 +70,9 @@ class Kynort::Flights::Query
     self.child = 0
     self.infant = 0
     @passengers ||= []
-    @flight_key ||= []
+
+    @go_flight_keys = []
+    @return_flight_keys = []
 
     super
   end
@@ -74,7 +88,7 @@ class Kynort::Flights::Query
   end
 
   def is_searching?
-    (@flight_key.blank? || self.passengers.blank?)
+    (@go_flight_keys.blank? || self.passengers.blank?)
   end
 
   def validate!
@@ -84,7 +98,7 @@ class Kynort::Flights::Query
     raise "booker_id/issuer_id cannot be blank if not searching" if !is_searching? && (booker_id.blank? && issuer_id.blank?)
 
     # automatically set use_cache to false, if booking
-    if passengers.any? && @flight_key.any?
+    if passengers.any? && @go_flight_keys.any?
       self.use_cache = false
     end
     raise "use_cache cannot be nil/blank, it must be either true or false" unless @use_cache.is_a?(TrueClass) || @use_cache.is_a?(FalseClass)
@@ -110,12 +124,13 @@ class Kynort::Flights::Query
   def to_hash
     # validate first
     validate!
-    raise "flight key cannot be nil/blank" if (@flight_key.nil? || @flight_key.blank?) && !is_searching?
+    return "go flight keys cannot be nil/blank" if (@go_flight_keys.nil? || @go_flight_keys.empty?) && !is_searching?
 
     data = {
         access_token: Kynort.token,
 
-        flight_keys: flight_key,
+        go_flight_keys: go_flight_keys,
+        return_flight_keys: return_flight_keys,
         use_cache: use_cache,
         depart: depart,
         arrival: arrival,
