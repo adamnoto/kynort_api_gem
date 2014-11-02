@@ -14,7 +14,7 @@ module Kynort::Flights::Citilink
     query_hash = query.to_hash
   end
 
-  def pick(request_guid, query)
+  def book(request_guid, query)
     raise "Query must be an instance of Kynort::Flights::Query" unless query.is_a?(Kynort::Flights::Query)
     raise "There is no passenger, please fill the passenger data" if query.passengers.nil?
     query_hash = query.to_hash
@@ -23,10 +23,14 @@ module Kynort::Flights::Citilink
     reply
   end
 
+  def validate_booking!(query)
+    validate_passenger_data! query
+    # passenger phone must present
+    raise "Passenger phone cannot be blank" if query.passenger_phone.blank?
+  end
+
   # return errors of each passengers grouped by the passenger's index
-  def validate_passenger_data(query)
-    errors = {}
-    query.passengers.each.with_index(0) { |psg, idx| errors[idx.to_s] = psg.validate }
-    errors
+  def validate_passenger_data!(query)
+    query.passengers.each { |pax| pax.validate! }
   end
 end

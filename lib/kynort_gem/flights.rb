@@ -60,15 +60,15 @@ module Kynort::Flights
     response = Kynort::Flights::Response.new
     case acode.to_s.downcase
       when "aia"
-        response.raw = Kynort::Flights::AirAsia.pick request_guid, query
+        response.raw = Kynort::Flights::AirAsia.book request_guid, query
       when "gia"
-        response.raw = Kynort::Flights::GarudaIndonesia.pick request_guid, query
+        response.raw = Kynort::Flights::GarudaIndonesia.book request_guid, query
       when "lir"
-        response.raw = Kynort::Flights::Lion.pick request_guid, query
+        response.raw = Kynort::Flights::Lion.book request_guid, query
       when "sya"
-        response.raw = Kynort::Flights::Sriwijaya.pick request_guid, query
+        response.raw = Kynort::Flights::Sriwijaya.book request_guid, query
       when "cnk"
-        response.raw = Kynort::Flights::Citilink.pick request_guid, query
+        response.raw = Kynort::Flights::Citilink.book request_guid, query
       else
         raise "airline code not understood (#{airline_code}), only {aia, gia, sya, cnk, lir}"
     end

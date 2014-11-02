@@ -8,7 +8,7 @@ class Kynort::Flights::Sriwijaya
       reply
     end
 
-    def pick(request_guid, query)
+    def book(request_guid, query)
       raise "Query must be an instance of Kynort::Flights::Query" unless query.is_a?(Kynort::Flights::Query)
       raise "There is no passenger, please fill the passenger data" if query.passengers.nil?
       query_hash = query.to_hash

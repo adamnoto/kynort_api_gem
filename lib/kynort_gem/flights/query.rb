@@ -65,6 +65,7 @@ class Kynort::Flights::Query
   attr_accessor :use_insurance
 
   attr_reader :passengers
+  attr_accessor :passenger_phone
 
   def initialize
     self.child = 0
