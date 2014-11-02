@@ -44,6 +44,9 @@ class Kynort::Flights::Query
 
   # only adult passenger can be given right to be a contact person (0-indexed)
   # attr_accessor :contact_who
+  attr_accessor :contact_first_name
+  attr_accessor :contact_middle_name
+  attr_accessor :contact_last_name
   attr_accessor :contact_hp
   attr_accessor :contact_email
 
@@ -173,6 +176,9 @@ class Kynort::Flights::Query
     # only if to is specified, add it
     data[:to] = to if to && !to.blank?
     data[:captcha] = captcha if captcha && !captcha.blank?
+    data[:contact_fn] = contact_first_name if contact_first_name.is_a?(String)
+    data[:contact_mn] = contact_middle_name if contact_middle_name.is_a?(String)
+    data[:contact_ln] = contact_last_name if contact_last_name.is_a?(String)
 
     unless is_searching?
       # process passengers
