@@ -183,7 +183,7 @@ class Kynort::Flights::Query
         any_passenger_as_contact_person = true if !any_passenger_as_contact_person && psg.is_contact_person?
 
         data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
-        data["#{x}_phones"] << (psg.phone.nil? ? "" : psg.phone) + "....."
+        data["#{x}_phones"] << (psg.phone.nil? ? "" : psg.phone) + "....." if x != 'i'
         data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
         data["#{x}_fns"] << (psg.first_name.nil? ? "" : psg.first_name) + "....."
         data["#{x}_mns"] << (psg.middle_name.nil? ? "" : psg.middle_name) + "....."
