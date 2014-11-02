@@ -194,6 +194,7 @@ class Kynort::Flights::Query
     data[:contact_fn] = contact_first_name if contact_first_name.is_a?(String)
     data[:contact_mn] = contact_middle_name if contact_middle_name.is_a?(String)
     data[:contact_ln] = contact_last_name if contact_last_name.is_a?(String)
+    data[:passenger_phone] = passenger_phone if passenger_phone
 
     unless is_searching?
       # process passengers
