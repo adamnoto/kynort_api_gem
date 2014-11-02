@@ -18,7 +18,7 @@ module Kynort::Flights::Citilink
     raise "Query must be an instance of Kynort::Flights::Query" unless query.is_a?(Kynort::Flights::Query)
     raise "There is no passenger, please fill the passenger data" if query.passengers.nil?
 
-    validate_booking!
+    validate_booking! query
 
     query_hash = query.to_hash
     query_hash[:request_guid] = request_guid
