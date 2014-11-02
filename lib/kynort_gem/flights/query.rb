@@ -203,9 +203,9 @@ class Kynort::Flights::Query
         end
       end
       # check number
-      raise "number of adults do not match with number of inputted data for adult" unless data[:adult] == entered_adult
-      raise "number of children do not match with number of inputted data for children" unless data[:child] == entered_child
-      raise "number of infant do not match with number of inputted data for infant" unless data[:infant] == entered_infant
+      raise "number of adults (#{data[:adult]}) do not match with number of inputted data for adult (#{entered_adult})" unless data[:adult] == entered_adult
+      raise "number of children (#{data[:child]}) do not match with number of inputted data for children (#{entered_child})" unless data[:child] == entered_child
+      raise "number of infant (#{data[:infant]}) do not match with number of inputted data for infant (#{entered_infant})" unless data[:infant] == entered_infant
     end
 
     data = data.delete_if { |k, v| v.nil? || v.blank? }
