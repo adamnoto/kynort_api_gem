@@ -57,6 +57,7 @@ class Kynort::Flights::Passenger
     errors << "is_infant must be a boolean" if is_infant && !(is_infant.is_a?(TrueClass) || is_infant.is_a?(FalseClass))
     errors << "associated_adult must be an adult" if is_infant && (associated_adult.nil? || \
        !associated_adult.is_a?(Kynort::Flights::Passenger) || !associated_adult.is_adult)
+    errors
   end
 
   def validate!
