@@ -214,8 +214,6 @@ class Kynort::Flights::Query
           raise "unsure"
         end
 
-        any_passenger_as_contact_person = true if !any_passenger_as_contact_person && psg.is_contact_person?
-
         data["#{x}_titles"] << (psg.title.nil? ? "" : psg.title) + "....."
         data["#{x}_phones"] << (psg.phone.nil? ? "" : psg.phone) + "....." if x != 'i'
         data["#{x}_passports"] << (psg.passport.nil? ? "" : psg.passport.to_s) + "....."
