@@ -115,7 +115,7 @@ class Kynort::Flights::Query
     data = {
         access_token: Kynort.token,
 
-        flight_key: flight_key,
+        flight_keys: flight_key,
         use_cache: use_cache,
         depart: depart,
         arrival: arrival,
