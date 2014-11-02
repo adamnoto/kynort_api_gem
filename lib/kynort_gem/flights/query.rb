@@ -25,7 +25,7 @@ class Kynort::Flights::Query
 
   attr_accessor :depart, :arrival
   attr_accessor :from, :to
-  attr_accessor :adult, :child, :infant
+  attr_writer :adult, :child, :infant
   attr_accessor :captcha
 
   attr_accessor :agent_first_name
@@ -54,6 +54,16 @@ class Kynort::Flights::Query
     @flight_key ||= []
 
     super
+  end
+
+  def adult
+    Integer(@adult)
+  end
+  def child
+    Integer(@child || 0)
+  end
+  def infant
+    Integer(@infant || 0)
   end
 
   def is_searching?
