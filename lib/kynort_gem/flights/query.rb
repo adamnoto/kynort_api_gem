@@ -216,6 +216,9 @@ class Kynort::Flights::Query
           data["contact_who"] = Integer idx
           data["contact_hp"] = psg.phone
         end
+
+        data[:booker_id] = booker_id if booker_id
+        data[:issuer_id] = issuer_id if issuer_id
       end
       # check number
       raise "number of adults (#{data[:adult]}) do not match with number of inputted data for adult (#{entered_adult})" unless data[:adult] == entered_adult
