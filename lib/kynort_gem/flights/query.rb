@@ -28,6 +28,10 @@ class Kynort::Flights::Query
   attr_writer :adult, :child, :infant
   attr_accessor :captcha
 
+  # only when booking a flight/issuing a ticket.
+  attr_accessor :booker_id
+  attr_accessor :issuer_id
+
   attr_accessor :agent_first_name
   attr_accessor :agent_middle_name # optional
   attr_accessor :agent_last_name # optional
@@ -74,6 +78,7 @@ class Kynort::Flights::Query
     raise "request_guid cannot be nil/blank" if request_guid.blank?
     raise "airline cannot be nil/blank" if airline.blank?
     raise "airline must be either: cnk, sya, gia, lir, aia" unless %w(cnk sya gia lir aia).include? airline.to_s
+    raise "booker_id/issuer_id cannot be blank if not searching" if !is_searching? && (booker_id.blank? || issuer_id.blank?)
 
     # automatically set use_cache to false, if booking
     if passengers.any? && @flight_key.any?
