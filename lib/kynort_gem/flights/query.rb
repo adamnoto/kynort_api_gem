@@ -44,7 +44,7 @@ class Kynort::Flights::Query
 
   # only adult passenger can be given right to be a contact person (0-indexed)
   # attr_accessor :contact_who
-  # attr_accessor :contact_hp
+  attr_accessor :contact_hp
   attr_accessor :contact_email
 
   attr_accessor :use_insurance
@@ -131,8 +131,6 @@ class Kynort::Flights::Query
         agent_comp_phone: agent_comp_phone,
         agent_comp_email: agent_comp_email,
 
-        # contact_who: contact_who,  # automatically filled by contact person passenger
-        # contact_hp: contact_hp,    # automatically filled by contact person passenger
         contact_email: contact_email,
 
         a_titles: "",
@@ -213,12 +211,13 @@ class Kynort::Flights::Query
         end
 
         if psg.is_contact_person
-          data["contact_who"] = Integer idx
-          data["contact_hp"] = psg.phone
+          self.contact_hp = psg.phone
         end
 
         data[:booker_id] = booker_id if booker_id
         data[:issuer_id] = issuer_id if issuer_id
+        data[:contact_hp] = contact_hp if contact_hp
+
       end
       # check number
       raise "number of adults (#{data[:adult]}) do not match with number of inputted data for adult (#{entered_adult})" unless data[:adult] == entered_adult
