@@ -17,6 +17,9 @@ module Kynort::Flights::Citilink
   def book(request_guid, query)
     raise "Query must be an instance of Kynort::Flights::Query" unless query.is_a?(Kynort::Flights::Query)
     raise "There is no passenger, please fill the passenger data" if query.passengers.nil?
+
+    validate_booking!
+
     query_hash = query.to_hash
     query_hash[:request_guid] = request_guid
     reply = RestClient.post "http://localhost:4001/api/v1/flights/book/citilink.json", query_hash
