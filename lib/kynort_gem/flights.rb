@@ -45,7 +45,7 @@ module Kynort::Flights
     return response
   end
 
-  def pick(query)
+  def book(query)
     request_guid = query.request_guid
     airline_code = query.airline
 
