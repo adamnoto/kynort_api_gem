@@ -9,13 +9,11 @@ class Kynort::Flights::Passenger
   attr_accessor :born_month
   attr_accessor :born_year
   attr_accessor :nationality
-  attr_accessor :is_contact_person
 
   attr_accessor :is_adult
   attr_accessor :is_child
   attr_accessor :is_infant
 
-  alias_method :is_contact_person?, :is_contact_person
   alias_method :is_adult?, :is_adult
   alias_method :is_child?, :is_child
   alias_method :is_infant?, :is_infant

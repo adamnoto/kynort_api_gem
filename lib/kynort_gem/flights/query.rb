@@ -59,7 +59,6 @@ class Kynort::Flights::Query
   attr_accessor :contact_first_name
   attr_accessor :contact_middle_name
   attr_accessor :contact_last_name
-  attr_accessor :contact_hp
   attr_accessor :contact_email
 
   attr_accessor :use_insurance
@@ -232,13 +231,8 @@ class Kynort::Flights::Query
           data["#{x}_assocs"] = adult_passengers.index(psg.associated_adult) + 1
         end
 
-        if psg.is_contact_person
-          self.contact_hp = psg.phone
-        end
-
         data[:booker_id] = booker_id if booker_id
         data[:issuer_id] = issuer_id if issuer_id
-        data[:contact_hp] = contact_hp if contact_hp
 
       end
       # check number
