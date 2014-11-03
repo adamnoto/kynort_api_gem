@@ -83,9 +83,9 @@ module Kynort::Flights
     return response
   end
 
-  def remove_search_result(request_guid, airline)
+  def remove_search_result(guid, airline)
     data = {
-      request_guid: request_guid,
+      guid: guid,
       airline: airline.to_s.downcase
     }
 
