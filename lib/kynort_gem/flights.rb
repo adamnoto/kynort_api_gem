@@ -82,6 +82,15 @@ module Kynort::Flights
     end
     return response
   end
+
+  def remove_search_result(request_guid, airline)
+    data = {
+      request_guid: request_guid,
+      airline: airline.to_s.downcase
+    }
+
+    RestClient.post "http://localhost:4001/api/v1/flights/remove/search_result.json", data
+  end
 end
 
 require "kynort_gem/flights/air_asia"
