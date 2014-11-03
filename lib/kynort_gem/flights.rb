@@ -85,6 +85,7 @@ module Kynort::Flights
 
   def remove_search_result(guid, airline)
     data = {
+      access_token: Kynort.token,
       guid: guid,
       airline: airline.to_s.downcase
     }
