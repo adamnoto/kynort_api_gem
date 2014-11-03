@@ -18,9 +18,10 @@
     <orderEntry type="library" scope="PROVIDED" name="actionview (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.1.6, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v5.0.1.20140414130214, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.6.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.11, rbenv: 2.1.1) [gem]" level="application" />
@@ -31,7 +32,7 @@
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.6, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.3.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rest-client (v1.6.7, rbenv: 2.1.1) [gem]" level="application" />
