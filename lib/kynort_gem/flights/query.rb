@@ -5,6 +5,7 @@ class Kynort::Flights::Query
     @airline.to_s.downcase
   end
   attr_accessor :request_guid
+  attr_accessor :search_guid      # only for booking/issuing
 
   def add_go_key(go_flight_key)
     @go_flight_keys << go_flight_key
@@ -107,6 +108,8 @@ class Kynort::Flights::Query
     # only validate agent and contact and passengers while not on pick request,
     # search request no need to fill in those values
     unless is_searching?
+      raise "search_guid cannot be nil/blank" if self.search_guid.blank?
+
       validate_agent!
       validate_contact!
       validate_passengers!
