@@ -72,6 +72,11 @@ module Kynort::Flights
       else
         raise "airline code not understood (#{airline_code}), only {aia, gia, sya, cnk, lir}"
     end
+    resp_as_hash = JSON.parse response.raw
+    if resp_as_hash["error"]
+      raise resp_as_hash["error"]
+    end
+
     return response
   rescue => e
     response.is_error = true
