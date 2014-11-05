@@ -22,38 +22,71 @@
     <favorites_list name="kynort" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="flights.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94736844" vertical-offset="360" max-vertical-offset="1740">
-              <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="air_asia.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/air_asia.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="4185">
-              <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="flights.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1740">
+                  <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="citilink.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/citilink.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+                  <caret line="11" column="83" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="83" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="air_asia.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/air_asia.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+                  <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="query.rb" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5724466" vertical-offset="748" max-vertical-offset="5445">
+                  <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="query.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.12470309" vertical-offset="0" max-vertical-offset="1110">
+                  <caret line="296" column="3" selection-start-line="296" selection-start-column="3" selection-end-line="296" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#58#2184#0" expanded="false" />
+                    <element signature="e#293#473#0" expanded="false" />
+                    <element signature="e#477#599#0" expanded="false" />
+                    <element signature="e#2186#8920#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -84,14 +117,14 @@
         <option value="$PROJECT_DIR$/lib/kynort_gem/api_request.rb" />
         <option value="$PROJECT_DIR$/lib/kynort.rb" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/kynort_gem/flights/citilink.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights/sriwijaya.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights/lion.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights/garuda_indonesia.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights/air_asia.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights/response.rb" />
-        <option value="$PROJECT_DIR$/lib/kynort_gem/flights/query.rb" />
         <option value="$PROJECT_DIR$/lib/kynort_gem/flights.rb" />
+        <option value="$PROJECT_DIR$/lib/kynort_gem/flights/citilink.rb" />
+        <option value="$PROJECT_DIR$/lib/kynort_gem/flights/query.rb" />
       </list>
     </option>
   </component>
@@ -247,7 +280,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="query&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/query.rb&#10;flight&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights.rb&#10;response&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/response.rb&#10;flights.rb&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights.rb&#10;gemsp&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/kynort.gemspec&#10;flights/air&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/air_asia.rb&#10;flights/query&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/query.rb&#10;suggest_r&#9;null&#9;null&#10;browse&#9;null&#9;null&#10;lion&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights/lion.rb&#10;passen&#9;null&#9;null&#10;gemspe&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/kynort.gemspec&#10;kynort&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort.rb&#10;normali&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/normalize_country.rb&#10;fligh&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights.rb&#10;&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/version.rb" />
+    <property name="SearchEverywhereHistoryKey" value="citilink&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/citilink.rb&#10;query&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/query.rb&#10;flight&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights.rb&#10;response&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/response.rb&#10;flights.rb&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights.rb&#10;gemsp&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/kynort.gemspec&#10;flights/air&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/air_asia.rb&#10;flights/query&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort_gem/lib/kynort_gem/flights/query.rb&#10;suggest_r&#9;null&#9;null&#10;browse&#9;null&#9;null&#10;lion&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights/lion.rb&#10;passen&#9;null&#9;null&#10;gemspe&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/kynort.gemspec&#10;kynort&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort.rb&#10;normali&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/normalize_country.rb&#10;fligh&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/flights.rb&#10;&#9;FILE&#9;file:///Users/works/Documents/OF/RUBY-211/kynort/lib/kynort/version.rb" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
@@ -363,7 +396,7 @@
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25222024" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25222024" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38757062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -424,7 +457,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2115" max-vertical-offset="4125">
           <caret line="141" column="24" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#58#2184#0" expanded="false" />
+            <element signature="e#293#473#0" expanded="false" />
+            <element signature="e#477#599#0" expanded="false" />
+            <element signature="e#2186#8920#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -744,18 +782,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/citilink.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="660">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/response.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1740">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -768,19 +806,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
+    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/citilink.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="4185">
-          <caret line="255" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="11" column="83" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights.rb">
+    <entry file="file://$PROJECT_DIR$/lib/kynort_gem/flights/query.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94736844" vertical-offset="360" max-vertical-offset="1740">
-          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="0.12470309" vertical-offset="0" max-vertical-offset="1110">
+          <caret line="296" column="3" selection-start-line="296" selection-start-column="3" selection-end-line="296" selection-end-column="3" />
+          <folding>
+            <element signature="e#58#2184#0" expanded="false" />
+            <element signature="e#293#473#0" expanded="false" />
+            <element signature="e#477#599#0" expanded="false" />
+            <element signature="e#2186#8920#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

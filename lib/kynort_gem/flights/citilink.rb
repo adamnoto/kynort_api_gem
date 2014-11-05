@@ -12,6 +12,9 @@ module Kynort::Flights::Citilink
   def quote_final_price(request_guid, query, go_flight_key, return_flight_key = nil)
     raise "Query must be an instance of Kynort::FLights::Query" unless query.is_a?(Kynort::Flights::Query)
     query_hash = query.to_hash
+
+    reply = RestClient.post "http://localhost:4001/api/v1/flights/quote/citilink", query_hash
+    reply
   end
 
   def book(request_guid, query)
